@@ -42,7 +42,6 @@ unrestricted_page_routes = {'/login'}
 
 #######Coze workflow########
 coze_api_token = ""
- 
 coze_workflow_dice = {
     '大纲生成':"7498249529176588325",
     '文本生成':"7498249529176604709"

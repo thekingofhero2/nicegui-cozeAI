@@ -1,2 +1,5 @@
 nicegui
 cozepy
+python-docx
+markdown    
+beautifulsoup4

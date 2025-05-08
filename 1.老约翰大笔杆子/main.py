@@ -1,6 +1,6 @@
 from nicegui import ui,app 
 from CallCozeWorkflow import CallCozeWorkflow
-
+from MakeFile import MakeFile
 @ui.page("/word")
 def make_word():
     global_text_dict = {
@@ -29,7 +29,9 @@ def make_word():
             ui.textarea(label="文章大纲(可修改)").classes("w-full").bind_value(global_text_dict,"struct")
         with ui.column().classes("col-5"):
             ui.button("2.根据大纲生成文章(很慢，得等，耐心)",on_click=coze_obj.callContentGen).classes("w-full").bind_enabled(global_text_dict,'btn_enable')  
-            ui.textarea(label="文章").classes("w-full ").bind_value(global_text_dict,"content")    
+            ui.textarea(label="文章").classes("w-full ").bind_value(global_text_dict,"content")
+            ui.button('Download', on_click=lambda x:MakeFile(global_text_dict))
+    
 
 @ui.page("/")
 def main():
